@@ -6,6 +6,7 @@ const app = express();
 const PORT = 5000;
 app.use(express.json());
 app.use('/test', router);
+app.use('/getallusers',router);
 
 app.listen(PORT,()=>{
     console.log(`The server is running on port :${PORT}`)
