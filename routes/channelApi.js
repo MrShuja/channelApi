@@ -78,5 +78,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+//route to fetch single data
+router.get('/:id', async (req, res)=>{
+    const [id] = req.params.id;
+    try{
+        const [result] = await conn.promise().query("SELECT * FROM channelApi WHERE id = ?", id);
+        res.status(201).json({message:"the channel is retrieved", data:result})
+        console.log(result)
+    }catch(err){
+        res.status(500).json("error occur while get the channel")
+    }
+})
+
 
 export default router;

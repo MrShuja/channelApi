@@ -7,6 +7,7 @@ const PORT = 5000;
 app.use(express.json());
 app.use('/test', router);
 app.use('/getallusers',router);
+app.use('/channel', router);
 
 app.listen(PORT,()=>{
     console.log(`The server is running on port :${PORT}`)
